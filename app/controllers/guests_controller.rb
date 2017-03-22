@@ -10,7 +10,6 @@ class GuestsController < ApplicationController
   end
 
   def update
-    binding.pry
     @guest = Guest.find_by(id: params[:id])
     respond_to do |format|
        if @guest.update_attributes(id: params[:id])
