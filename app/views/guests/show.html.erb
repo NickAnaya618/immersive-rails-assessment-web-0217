@@ -1,0 +1,19 @@
+<h1><%= @guest.name %></h1>
+
+<ul>
+  <label>Guest Name:</label>
+    <%= @guest.name %><br>
+  <label>Occupation:</label>
+    <%= @guest.occupation.capitalize %>
+    <!-- Select: populate selected episodes  -->
+</ul>
+
+<%= "Appeared On:" %>
+<%= form_for @guest do |f| %>
+    <select name="guest[episode]" id="guest.episode" action="patch">
+      <% @episodes.each do |episode| %>
+        <option value="#{episode.number}"><%= "Episode: #{episode.number}" %></option>
+      <% end %>
+    </select>
+  <%= f.submit %>
+<% end %>

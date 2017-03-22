@@ -2,6 +2,10 @@
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li>
+      <%= link_to guest do %>
+        <%= guest.name %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
