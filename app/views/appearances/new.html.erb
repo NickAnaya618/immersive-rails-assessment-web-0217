@@ -1,0 +1,18 @@
+<h1>Book an appearance</h1>
+<%= form_for @appearance do |f| %>
+  <div class="">
+    <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+  </div>
+
+  <div class="">
+    <%= f.collection_select :episode_id, Episode.all, :id, :date %>
+  </div>
+
+  <div class="">
+    <%= f.number_field :rating, min: 1, max: 5 %>
+  </div>
+
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>

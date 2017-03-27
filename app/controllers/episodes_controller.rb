@@ -5,7 +5,6 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    @episode = Episode.find_by(id: params[:id])
-    @guests = Guest.all
+    @episode = Episode.find(params[:id])
   end
 end

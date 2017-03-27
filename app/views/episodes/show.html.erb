@@ -1,5 +1,7 @@
-<%= @guests.each do |guest| %>
-  <%= guest.name %>
-<% end %>
+<h1>Guests on the <%= @episode.date %> show</h1>
 
-<!-- show page is routed... going to work on associating guests to episode. Considering drop down  by way of Update? -->
+<ul>
+  <% @episode.guests.each do |guest| %>
+    <li><%= link_to guest.name, guest %></li>
+  <% end %>
+</ul>
